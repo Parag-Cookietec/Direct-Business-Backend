@@ -19,4 +19,11 @@ public class DoiDBUriConstants {
     public static final String DOI_DB_PROP_MONEY_IN_TRANSIT_ENTRY ="/money-in-transit-proposal-entry";
     public static final String DOI_DB_POLICY_MONEY_IN_TRANSIT_ENTRY ="/money-in-transit-policy-entry";
 
+    /**
+     * Aviation
+     * */
+    public static final String DOI_DB_PROP_AVIATION_ENTRY ="/aviation-proposal-entry";
+    public static final String DOI_DB_POLICY_AVIATION_ENTRY ="/aviation-policy-entry";
+    public static final String DOI_DB_AVIATION_RISK_COVERED ="doi/db-aviation-risk-covered";
+
 }

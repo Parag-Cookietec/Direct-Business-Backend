@@ -14,9 +14,9 @@ import gov.ifms.doi.jpa.dto.BaseDto;
  */
 
 public class TdoiDbPropslAviationDTO extends BaseDto {
-	private static final long serialVersionUID = 1L;
+	private static final Long serialVersionUID = 1L;
 
-	private long propAviationId;
+	private Long propAviationId;
 
 	private String aircraftGeogLmt;
 
@@ -24,83 +24,83 @@ public class TdoiDbPropslAviationDTO extends BaseDto {
 
 	private String aircraftUsedPurp;
 
-	private double applDeduction;
+	private Double applDeduction;
 
-	private long bankId;
+	private Long bankId;
 
 	private String bankName;
 
-	private long branchId;
+	private Long branchId;
 
 	private String branchName;
 
-	private double challanAmount;
+	private Double challanAmount;
 
-	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = DoiJPAConstants.DOI_DATE_TIME_FORMAT)
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = DoiJPAConstants.DOI_DATE_FORMAT)
 	private Date challanDt;
 
 	private String challanNo;
 
-	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = DoiJPAConstants.DOI_DATE_TIME_FORMAT)
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = DoiJPAConstants.DOI_DATE_FORMAT)
 	private Date chequeDdDt;
 
 	private String chequeDdNo;
 
-	private double crewPaCover;
+	private Double crewPaCover;
 
-	private double insrncPremium;
+	private Double insrncPremium;
 
-	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = DoiJPAConstants.DOI_DATE_TIME_FORMAT)
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = DoiJPAConstants.DOI_DATE_FORMAT)
 	private Date insurEndDt;
 
-	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = DoiJPAConstants.DOI_DATE_TIME_FORMAT)
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = DoiJPAConstants.DOI_DATE_FORMAT)
 	private Date insurStartDt;
 
 	private String isRiReqd;
 
-	private double payablePremAmt;
+	private Double payablePremAmt;
 
-	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = DoiJPAConstants.DOI_DATE_TIME_FORMAT)
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = DoiJPAConstants.DOI_DATE_FORMAT)
 	private Date paymentDate;
 
-	private long paymentModeId;
+	private Long paymentModeId;
 
 	private String pilotWarranty;
 
-	private double pllAmt;
+	private Double pllAmt;
 
-	private double premDiscAmt;
+	private Double premDiscAmt;
 
-	private double premDiscPc;
+	private Double premDiscPc;
 
-	private double premGstAmt;
+	private Double premGstAmt;
 
-	private double premGstPc;
+	private Double premGstPc;
 
 	private String prevPolicyNo;
 
-	private long propslPoliciesId;
+	private Long propslPoliciesId;
 
-	private double rateOfIntrst;
+	private Double rateOfIntrst;
 
-	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = DoiJPAConstants.DOI_DATE_TIME_FORMAT)
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = DoiJPAConstants.DOI_DATE_FORMAT)
 	private Date referenceDt;
 
 	private String referenceNo;
 
 	private String riskCoveredDtls;
 
-	private double sumInsured;
+	private Double sumInsured;
 
-	private double totAddonPrem;
+	private Double totAddonPrem;
 
-	private double totAgreedVal;
+	private Double totAgreedVal;
 
-	private double totRiAmt;
+	private Double totRiAmt;
 
-	private double totalPremium;
+	private Double totalPremium;
 
-	private double tplCslLiab;
+	private Double tplCslLiab;
 
 	private TdoiDbProposalDTO tdoiDbProposal;
 
@@ -110,11 +110,11 @@ public class TdoiDbPropslAviationDTO extends BaseDto {
 
 	private List<TdoiDbPropAviationRiDtlDTO> tdoiDbPropAviationRiDtls;
 
-	public long getPropAviationId() {
+	public Long getPropAviationId() {
 		return this.propAviationId;
 	}
 
-	public void setPropAviationId(long propAviationId) {
+	public void setPropAviationId(Long propAviationId) {
 		this.propAviationId = propAviationId;
 	}
 
@@ -142,19 +142,19 @@ public class TdoiDbPropslAviationDTO extends BaseDto {
 		this.aircraftUsedPurp = aircraftUsedPurp;
 	}
 
-	public double getApplDeduction() {
+	public Double getApplDeduction() {
 		return this.applDeduction;
 	}
 
-	public void setApplDeduction(double applDeduction) {
+	public void setApplDeduction(Double applDeduction) {
 		this.applDeduction = applDeduction;
 	}
 
-	public long getBankId() {
+	public Long getBankId() {
 		return this.bankId;
 	}
 
-	public void setBankId(long bankId) {
+	public void setBankId(Long bankId) {
 		this.bankId = bankId;
 	}
 
@@ -166,11 +166,11 @@ public class TdoiDbPropslAviationDTO extends BaseDto {
 		this.bankName = bankName;
 	}
 
-	public long getBranchId() {
+	public Long getBranchId() {
 		return this.branchId;
 	}
 
-	public void setBranchId(long branchId) {
+	public void setBranchId(Long branchId) {
 		this.branchId = branchId;
 	}
 
@@ -182,11 +182,11 @@ public class TdoiDbPropslAviationDTO extends BaseDto {
 		this.branchName = branchName;
 	}
 
-	public double getChallanAmount() {
+	public Double getChallanAmount() {
 		return this.challanAmount;
 	}
 
-	public void setChallanAmount(double challanAmount) {
+	public void setChallanAmount(Double challanAmount) {
 		this.challanAmount = challanAmount;
 	}
 
@@ -222,19 +222,19 @@ public class TdoiDbPropslAviationDTO extends BaseDto {
 		this.chequeDdNo = chequeDdNo;
 	}
 
-	public double getCrewPaCover() {
+	public Double getCrewPaCover() {
 		return this.crewPaCover;
 	}
 
-	public void setCrewPaCover(double crewPaCover) {
+	public void setCrewPaCover(Double crewPaCover) {
 		this.crewPaCover = crewPaCover;
 	}
 
-	public double getInsrncPremium() {
+	public Double getInsrncPremium() {
 		return this.insrncPremium;
 	}
 
-	public void setInsrncPremium(double insrncPremium) {
+	public void setInsrncPremium(Double insrncPremium) {
 		this.insrncPremium = insrncPremium;
 	}
 
@@ -262,11 +262,11 @@ public class TdoiDbPropslAviationDTO extends BaseDto {
 		this.isRiReqd = isRiReqd;
 	}
 
-	public double getPayablePremAmt() {
+	public Double getPayablePremAmt() {
 		return this.payablePremAmt;
 	}
 
-	public void setPayablePremAmt(double payablePremAmt) {
+	public void setPayablePremAmt(Double payablePremAmt) {
 		this.payablePremAmt = payablePremAmt;
 	}
 
@@ -278,11 +278,11 @@ public class TdoiDbPropslAviationDTO extends BaseDto {
 		this.paymentDate = paymentDate;
 	}
 
-	public long getPaymentModeId() {
+	public Long getPaymentModeId() {
 		return this.paymentModeId;
 	}
 
-	public void setPaymentModeId(long paymentModeId) {
+	public void setPaymentModeId(Long paymentModeId) {
 		this.paymentModeId = paymentModeId;
 	}
 
@@ -294,43 +294,43 @@ public class TdoiDbPropslAviationDTO extends BaseDto {
 		this.pilotWarranty = pilotWarranty;
 	}
 
-	public double getPllAmt() {
+	public Double getPllAmt() {
 		return this.pllAmt;
 	}
 
-	public void setPllAmt(double pllAmt) {
+	public void setPllAmt(Double pllAmt) {
 		this.pllAmt = pllAmt;
 	}
 
-	public double getPremDiscAmt() {
+	public Double getPremDiscAmt() {
 		return this.premDiscAmt;
 	}
 
-	public void setPremDiscAmt(double premDiscAmt) {
+	public void setPremDiscAmt(Double premDiscAmt) {
 		this.premDiscAmt = premDiscAmt;
 	}
 
-	public double getPremDiscPc() {
+	public Double getPremDiscPc() {
 		return this.premDiscPc;
 	}
 
-	public void setPremDiscPc(double premDiscPc) {
+	public void setPremDiscPc(Double premDiscPc) {
 		this.premDiscPc = premDiscPc;
 	}
 
-	public double getPremGstAmt() {
+	public Double getPremGstAmt() {
 		return this.premGstAmt;
 	}
 
-	public void setPremGstAmt(double premGstAmt) {
+	public void setPremGstAmt(Double premGstAmt) {
 		this.premGstAmt = premGstAmt;
 	}
 
-	public double getPremGstPc() {
+	public Double getPremGstPc() {
 		return this.premGstPc;
 	}
 
-	public void setPremGstPc(double premGstPc) {
+	public void setPremGstPc(Double premGstPc) {
 		this.premGstPc = premGstPc;
 	}
 
@@ -342,19 +342,19 @@ public class TdoiDbPropslAviationDTO extends BaseDto {
 		this.prevPolicyNo = prevPolicyNo;
 	}
 
-	public long getPropslPoliciesId() {
+	public Long getPropslPoliciesId() {
 		return this.propslPoliciesId;
 	}
 
-	public void setPropslPoliciesId(long propslPoliciesId) {
+	public void setPropslPoliciesId(Long propslPoliciesId) {
 		this.propslPoliciesId = propslPoliciesId;
 	}
 
-	public double getRateOfIntrst() {
+	public Double getRateOfIntrst() {
 		return this.rateOfIntrst;
 	}
 
-	public void setRateOfIntrst(double rateOfIntrst) {
+	public void setRateOfIntrst(Double rateOfIntrst) {
 		this.rateOfIntrst = rateOfIntrst;
 	}
 
@@ -382,51 +382,51 @@ public class TdoiDbPropslAviationDTO extends BaseDto {
 		this.riskCoveredDtls = riskCoveredDtls;
 	}
 
-	public double getSumInsured() {
+	public Double getSumInsured() {
 		return this.sumInsured;
 	}
 
-	public void setSumInsured(double sumInsured) {
+	public void setSumInsured(Double sumInsured) {
 		this.sumInsured = sumInsured;
 	}
 
-	public double getTotAddonPrem() {
+	public Double getTotAddonPrem() {
 		return this.totAddonPrem;
 	}
 
-	public void setTotAddonPrem(double totAddonPrem) {
+	public void setTotAddonPrem(Double totAddonPrem) {
 		this.totAddonPrem = totAddonPrem;
 	}
 
-	public double getTotAgreedVal() {
+	public Double getTotAgreedVal() {
 		return this.totAgreedVal;
 	}
 
-	public void setTotAgreedVal(double totAgreedVal) {
+	public void setTotAgreedVal(Double totAgreedVal) {
 		this.totAgreedVal = totAgreedVal;
 	}
 
-	public double getTotRiAmt() {
+	public Double getTotRiAmt() {
 		return this.totRiAmt;
 	}
 
-	public void setTotRiAmt(double totRiAmt) {
+	public void setTotRiAmt(Double totRiAmt) {
 		this.totRiAmt = totRiAmt;
 	}
 
-	public double getTotalPremium() {
+	public Double getTotalPremium() {
 		return this.totalPremium;
 	}
 
-	public void setTotalPremium(double totalPremium) {
+	public void setTotalPremium(Double totalPremium) {
 		this.totalPremium = totalPremium;
 	}
 
-	public double getTplCslLiab() {
+	public Double getTplCslLiab() {
 		return this.tplCslLiab;
 	}
 
-	public void setTplCslLiab(double tplCslLiab) {
+	public void setTplCslLiab(Double tplCslLiab) {
 		this.tplCslLiab = tplCslLiab;
 	}
 

@@ -10,6 +10,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import gov.ifms.doi.jpa.constant.DoiJPAConstants;
 import gov.ifms.doi.jpa.entity.BaseEntity;
 
@@ -43,6 +44,7 @@ public class TdoiDbPropAviationRiDtlEntity extends BaseEntity {
 	// bi-directional many-to-one association to TdoiDbPropslAviation
 	@ManyToOne
 	@JoinColumn(name = "PROP_AVIATION_ID", nullable = false)
+	@JsonBackReference
 	private TdoiDbPropslAviationEntity tdoiDbPropslAviation;
 
 	public TdoiDbPropAviationRiDtlEntity() {

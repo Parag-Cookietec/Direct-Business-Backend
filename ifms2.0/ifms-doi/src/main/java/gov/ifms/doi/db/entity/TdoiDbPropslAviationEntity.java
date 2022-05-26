@@ -3,19 +3,10 @@ package gov.ifms.doi.db.entity;
 import java.util.Date;
 import java.util.List;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.NamedQuery;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import gov.ifms.doi.jpa.constant.DoiJPAConstants;
 import gov.ifms.doi.jpa.entity.BaseEntity;
 
@@ -27,12 +18,12 @@ import gov.ifms.doi.jpa.entity.BaseEntity;
 @Table(name = "TDOI_DB_PROPSL_AVIATION", schema = DoiJPAConstants.DOI_SCHEMA)
 @NamedQuery(name = "TdoiDbPropslAviationEntity.findAll", query = "SELECT t FROM TdoiDbPropslAviationEntity t")
 public class TdoiDbPropslAviationEntity extends BaseEntity {
-	private static final long serialVersionUID = 1L;
+	private static final Long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "PROP_AVIATION_ID", unique = true, nullable = false)
-	private long propAviationId;
+	private Long propAviationId;
 
 	@Column(name = "AIRCRAFT_GEOG_LMT", length = 100)
 	private String aircraftGeogLmt;
@@ -44,22 +35,22 @@ public class TdoiDbPropslAviationEntity extends BaseEntity {
 	private String aircraftUsedPurp;
 
 	@Column(name = "APPL_DEDUCTION")
-	private double applDeduction;
+	private Double applDeduction;
 
 	@Column(name = "BANK_ID")
-	private long bankId;
+	private Long bankId;
 
 	@Column(name = "BANK_NAME", length = 40)
 	private String bankName;
 
 	@Column(name = "BRANCH_ID")
-	private long branchId;
+	private Long branchId;
 
 	@Column(name = "BRANCH_NAME", length = 40)
 	private String branchName;
 
 	@Column(name = "CHALLAN_AMOUNT")
-	private double challanAmount;
+	private Double challanAmount;
 
 	@Temporal(TemporalType.DATE)
 	@Column(name = "CHALLAN_DT")
@@ -76,10 +67,10 @@ public class TdoiDbPropslAviationEntity extends BaseEntity {
 	private String chequeDdNo;
 
 	@Column(name = "CREW_PA_COVER")
-	private double crewPaCover;
+	private Double crewPaCover;
 
 	@Column(name = "INSRNC_PREMIUM")
-	private double insrncPremium;
+	private Double insrncPremium;
 
 	@Temporal(TemporalType.DATE)
 	@Column(name = "INSUR_END_DT")
@@ -93,41 +84,41 @@ public class TdoiDbPropslAviationEntity extends BaseEntity {
 	private String isRiReqd;
 
 	@Column(name = "PAYABLE_PREM_AMT")
-	private double payablePremAmt;
+	private Double payablePremAmt;
 
 	@Temporal(TemporalType.DATE)
 	@Column(name = "PAYMENT_DATE")
 	private Date paymentDate;
 
 	@Column(name = "PAYMENT_MODE_ID")
-	private long paymentModeId;
+	private Long paymentModeId;
 
 	@Column(name = "PILOT_WARRANTY", length = 100)
 	private String pilotWarranty;
 
 	@Column(name = "PLL_AMT")
-	private double pllAmt;
+	private Double pllAmt;
 
 	@Column(name = "PREM_DISC_AMT")
-	private double premDiscAmt;
+	private Double premDiscAmt;
 
 	@Column(name = "PREM_DISC_PC")
-	private double premDiscPc;
+	private Double premDiscPc;
 
 	@Column(name = "PREM_GST_AMT")
-	private double premGstAmt;
+	private Double premGstAmt;
 
 	@Column(name = "PREM_GST_PC")
-	private double premGstPc;
+	private Double premGstPc;
 
 	@Column(name = "PREV_POLICY_NO", length = 40)
 	private String prevPolicyNo;
 
 	@Column(name = "PROPSL_POLICIES_ID", nullable = false)
-	private long propslPoliciesId;
+	private Long propslPoliciesId;
 
 	@Column(name = "RATE_OF_INTRST")
-	private double rateOfIntrst;
+	private Double rateOfIntrst;
 
 	@Column(name = "REFERENCE_DT")
 	private Date referenceDt;
@@ -139,48 +130,52 @@ public class TdoiDbPropslAviationEntity extends BaseEntity {
 	private String riskCoveredDtls;
 
 	@Column(name = "SUM_INSURED")
-	private double sumInsured;
+	private Double sumInsured;
 
 	@Column(name = "TOT_ADDON_PREM")
-	private double totAddonPrem;
+	private Double totAddonPrem;
 
 	@Column(name = "TOT_AGREED_VAL")
-	private double totAgreedVal;
+	private Double totAgreedVal;
 
 	@Column(name = "TOT_RI_AMT")
-	private double totRiAmt;
+	private Double totRiAmt;
 
 	@Column(name = "TOTAL_PREMIUM")
-	private double totalPremium;
+	private Double totalPremium;
 
 	@Column(name = "TPL_CSL_LIAB")
-	private double tplCslLiab;
+	private Double tplCslLiab;
 
 	// bi-directional many-to-one association to TdoiDbProposal
 	@ManyToOne
 	@JoinColumn(name = "DB_PROPOSAL_ID", nullable = false)
+	@JsonBackReference
 	private TdoiDbProposalEntity tdoiDbProposal;
 
 	// bi-directional many-to-one association to TdoiDbPropslAviationWf
-	@OneToMany(mappedBy = "tdoiDbPropslAviation")
+	@OneToMany(mappedBy = "tdoiDbPropslAviation",fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@JsonManagedReference
 	private List<TdoiDbPropslAviationWfEntity> tdoiDbPropslAviationWfs;
 
 	// bi-directional many-to-one association to TdoiDbPropAviationAircraft
-	@OneToMany(mappedBy = "tdoiDbPropslAviation")
+	@OneToMany(mappedBy = "tdoiDbPropslAviation",fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@JsonManagedReference
 	private List<TdoiDbPropAviationAircraftEntity> tdoiDbPropAviationAircrafts;
 
 	// bi-directional many-to-one association to TdoiDbPropAviationRiDtl
-	@OneToMany(mappedBy = "tdoiDbPropslAviation")
+	@OneToMany(mappedBy = "tdoiDbPropslAviation",fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@JsonManagedReference
 	private List<TdoiDbPropAviationRiDtlEntity> tdoiDbPropAviationRiDtls;
 
 	public TdoiDbPropslAviationEntity() {
 	}
 
-	public long getPropAviationId() {
+	public Long getPropAviationId() {
 		return this.propAviationId;
 	}
 
-	public void setPropAviationId(long propAviationId) {
+	public void setPropAviationId(Long propAviationId) {
 		this.propAviationId = propAviationId;
 	}
 
@@ -208,19 +203,19 @@ public class TdoiDbPropslAviationEntity extends BaseEntity {
 		this.aircraftUsedPurp = aircraftUsedPurp;
 	}
 
-	public double getApplDeduction() {
+	public Double getApplDeduction() {
 		return this.applDeduction;
 	}
 
-	public void setApplDeduction(double applDeduction) {
+	public void setApplDeduction(Double applDeduction) {
 		this.applDeduction = applDeduction;
 	}
 
-	public long getBankId() {
+	public Long getBankId() {
 		return this.bankId;
 	}
 
-	public void setBankId(long bankId) {
+	public void setBankId(Long bankId) {
 		this.bankId = bankId;
 	}
 
@@ -232,11 +227,11 @@ public class TdoiDbPropslAviationEntity extends BaseEntity {
 		this.bankName = bankName;
 	}
 
-	public long getBranchId() {
+	public Long getBranchId() {
 		return this.branchId;
 	}
 
-	public void setBranchId(long branchId) {
+	public void setBranchId(Long branchId) {
 		this.branchId = branchId;
 	}
 
@@ -248,11 +243,11 @@ public class TdoiDbPropslAviationEntity extends BaseEntity {
 		this.branchName = branchName;
 	}
 
-	public double getChallanAmount() {
+	public Double getChallanAmount() {
 		return this.challanAmount;
 	}
 
-	public void setChallanAmount(double challanAmount) {
+	public void setChallanAmount(Double challanAmount) {
 		this.challanAmount = challanAmount;
 	}
 
@@ -288,19 +283,19 @@ public class TdoiDbPropslAviationEntity extends BaseEntity {
 		this.chequeDdNo = chequeDdNo;
 	}
 
-	public double getCrewPaCover() {
+	public Double getCrewPaCover() {
 		return this.crewPaCover;
 	}
 
-	public void setCrewPaCover(double crewPaCover) {
+	public void setCrewPaCover(Double crewPaCover) {
 		this.crewPaCover = crewPaCover;
 	}
 
-	public double getInsrncPremium() {
+	public Double getInsrncPremium() {
 		return this.insrncPremium;
 	}
 
-	public void setInsrncPremium(double insrncPremium) {
+	public void setInsrncPremium(Double insrncPremium) {
 		this.insrncPremium = insrncPremium;
 	}
 
@@ -328,11 +323,11 @@ public class TdoiDbPropslAviationEntity extends BaseEntity {
 		this.isRiReqd = isRiReqd;
 	}
 
-	public double getPayablePremAmt() {
+	public Double getPayablePremAmt() {
 		return this.payablePremAmt;
 	}
 
-	public void setPayablePremAmt(double payablePremAmt) {
+	public void setPayablePremAmt(Double payablePremAmt) {
 		this.payablePremAmt = payablePremAmt;
 	}
 
@@ -344,11 +339,11 @@ public class TdoiDbPropslAviationEntity extends BaseEntity {
 		this.paymentDate = paymentDate;
 	}
 
-	public long getPaymentModeId() {
+	public Long getPaymentModeId() {
 		return this.paymentModeId;
 	}
 
-	public void setPaymentModeId(long paymentModeId) {
+	public void setPaymentModeId(Long paymentModeId) {
 		this.paymentModeId = paymentModeId;
 	}
 
@@ -360,43 +355,43 @@ public class TdoiDbPropslAviationEntity extends BaseEntity {
 		this.pilotWarranty = pilotWarranty;
 	}
 
-	public double getPllAmt() {
+	public Double getPllAmt() {
 		return this.pllAmt;
 	}
 
-	public void setPllAmt(double pllAmt) {
+	public void setPllAmt(Double pllAmt) {
 		this.pllAmt = pllAmt;
 	}
 
-	public double getPremDiscAmt() {
+	public Double getPremDiscAmt() {
 		return this.premDiscAmt;
 	}
 
-	public void setPremDiscAmt(double premDiscAmt) {
+	public void setPremDiscAmt(Double premDiscAmt) {
 		this.premDiscAmt = premDiscAmt;
 	}
 
-	public double getPremDiscPc() {
+	public Double getPremDiscPc() {
 		return this.premDiscPc;
 	}
 
-	public void setPremDiscPc(double premDiscPc) {
+	public void setPremDiscPc(Double premDiscPc) {
 		this.premDiscPc = premDiscPc;
 	}
 
-	public double getPremGstAmt() {
+	public Double getPremGstAmt() {
 		return this.premGstAmt;
 	}
 
-	public void setPremGstAmt(double premGstAmt) {
+	public void setPremGstAmt(Double premGstAmt) {
 		this.premGstAmt = premGstAmt;
 	}
 
-	public double getPremGstPc() {
+	public Double getPremGstPc() {
 		return this.premGstPc;
 	}
 
-	public void setPremGstPc(double premGstPc) {
+	public void setPremGstPc(Double premGstPc) {
 		this.premGstPc = premGstPc;
 	}
 
@@ -408,19 +403,19 @@ public class TdoiDbPropslAviationEntity extends BaseEntity {
 		this.prevPolicyNo = prevPolicyNo;
 	}
 
-	public long getPropslPoliciesId() {
+	public Long getPropslPoliciesId() {
 		return this.propslPoliciesId;
 	}
 
-	public void setPropslPoliciesId(long propslPoliciesId) {
+	public void setPropslPoliciesId(Long propslPoliciesId) {
 		this.propslPoliciesId = propslPoliciesId;
 	}
 
-	public double getRateOfIntrst() {
+	public Double getRateOfIntrst() {
 		return this.rateOfIntrst;
 	}
 
-	public void setRateOfIntrst(double rateOfIntrst) {
+	public void setRateOfIntrst(Double rateOfIntrst) {
 		this.rateOfIntrst = rateOfIntrst;
 	}
 
@@ -448,51 +443,51 @@ public class TdoiDbPropslAviationEntity extends BaseEntity {
 		this.riskCoveredDtls = riskCoveredDtls;
 	}
 
-	public double getSumInsured() {
+	public Double getSumInsured() {
 		return this.sumInsured;
 	}
 
-	public void setSumInsured(double sumInsured) {
+	public void setSumInsured(Double sumInsured) {
 		this.sumInsured = sumInsured;
 	}
 
-	public double getTotAddonPrem() {
+	public Double getTotAddonPrem() {
 		return this.totAddonPrem;
 	}
 
-	public void setTotAddonPrem(double totAddonPrem) {
+	public void setTotAddonPrem(Double totAddonPrem) {
 		this.totAddonPrem = totAddonPrem;
 	}
 
-	public double getTotAgreedVal() {
+	public Double getTotAgreedVal() {
 		return this.totAgreedVal;
 	}
 
-	public void setTotAgreedVal(double totAgreedVal) {
+	public void setTotAgreedVal(Double totAgreedVal) {
 		this.totAgreedVal = totAgreedVal;
 	}
 
-	public double getTotRiAmt() {
+	public Double getTotRiAmt() {
 		return this.totRiAmt;
 	}
 
-	public void setTotRiAmt(double totRiAmt) {
+	public void setTotRiAmt(Double totRiAmt) {
 		this.totRiAmt = totRiAmt;
 	}
 
-	public double getTotalPremium() {
+	public Double getTotalPremium() {
 		return this.totalPremium;
 	}
 
-	public void setTotalPremium(double totalPremium) {
+	public void setTotalPremium(Double totalPremium) {
 		this.totalPremium = totalPremium;
 	}
 
-	public double getTplCslLiab() {
+	public Double getTplCslLiab() {
 		return this.tplCslLiab;
 	}
 
-	public void setTplCslLiab(double tplCslLiab) {
+	public void setTplCslLiab(Double tplCslLiab) {
 		this.tplCslLiab = tplCslLiab;
 	}
 

@@ -398,6 +398,13 @@ public class CommonController {
 				doiCommonLookupInfoService.getByParentLookUpName(DoiDBConstants.DOI_DB_TREASURY_NAME));
 	}
 
+	@Trace
+	@GetMapping(value = DoiDBUriConstants.DOI_DB_AVIATION_RISK_COVERED, produces = CONTENT_TYPE_APP_JSON)
+	public ResponseEntity<ApiResponse> getAviationRiskCovers() {
+		return ResponseUtil.getResponse(HttpStatus.OK, MsgConstant.BUDGET_MSG_FETCH,
+				doiCommonLookupInfoService.getByParentLookUpName(DoiDBConstants.DIR_BUSS_AVIATION_RISK_COVERD));
+	}
+
 
 
 

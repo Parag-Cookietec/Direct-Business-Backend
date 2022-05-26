@@ -230,7 +230,8 @@ public class TdoiDbProposalEntity extends BaseEntity {
 	private List<TdoiDbProposlWfEntity> tdoiDbProposlWfs;
 
 	// bi-directional many-to-one association to TdoiDbPropslAviation
-	@OneToMany(mappedBy = "tdoiDbProposal")
+	@OneToMany(mappedBy = "tdoiDbProposal",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+	@JsonManagedReference
 	private List<TdoiDbPropslAviationEntity> tdoiDbPropslAviations;
 
 	// bi-directional many-to-one association to TdoiDbPropslBurglary

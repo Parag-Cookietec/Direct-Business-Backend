@@ -30,6 +30,10 @@ public class DoiDBConstants {
     public static final String DOI_DB_MITPOL_REFERENCE_NUMBER_URI = "/DOI/DB/MITPOL/";
     public static final String DOI_DB_MIT_POLICY_NUMBER = "Policy Number";
 
+    //TODO: Replace below with updated key
+    public static final String DOI_DB_PROP_AVIATION_REFERENCE_NUMBER = "Reference Number";
+    public static final String DOI_DB_PROP_AVIATION_REFERENCE_NUMBER_URI = "/DOI/DB/AP/";
+
     /**
      * Proposal for Standard Fire and Perils
      * */
@@ -58,6 +62,11 @@ public class DoiDBConstants {
     public static final String DIR_BUSS_STAND_RI_REQUIEST = "DIR_BUSS_STAND_RI_REQUIEST";
 
 
+    /**
+     * Aviation Proposal and Policy
+     * */
+    // TODO: update below value to DIR_BUSS_AVIATION_RISK_COVERD in database and then change here
+    public static final String DIR_BUSS_AVIATION_RISK_COVERD = "DIR_BUSS_ELECTRO_RISK_COVERD";
 
 
 
