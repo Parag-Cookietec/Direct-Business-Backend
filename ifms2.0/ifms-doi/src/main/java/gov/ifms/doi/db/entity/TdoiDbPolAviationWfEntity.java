@@ -10,6 +10,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import gov.ifms.doi.jpa.constant.DoiJPAConstants;
 import gov.ifms.doi.jpa.entity.BaseEntity;
 
@@ -109,6 +110,7 @@ public class TdoiDbPolAviationWfEntity extends BaseEntity {
 	// bi-directional many-to-one association to TdoiDbPolAviation
 	@ManyToOne
 	@JoinColumn(name = "TRN_ID")
+	@JsonBackReference
 	private TdoiDbPolAviationEntity tdoiDbPolAviation;
 
 	public TdoiDbPolAviationWfEntity() {

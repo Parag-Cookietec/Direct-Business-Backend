@@ -34,6 +34,9 @@ public class DoiDBConstants {
     public static final String DOI_DB_PROP_AVIATION_REFERENCE_NUMBER = "Reference Number";
     public static final String DOI_DB_PROP_AVIATION_REFERENCE_NUMBER_URI = "/DOI/DB/AP/";
 
+    //TODO: Replace below with updated key
+    public static final String DOI_DB_AP_POLICY_NUMBER = "Policy Number";
+
     /**
      * Proposal for Standard Fire and Perils
      * */

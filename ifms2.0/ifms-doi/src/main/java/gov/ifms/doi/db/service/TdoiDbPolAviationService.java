@@ -4,13 +4,13 @@ import java.util.List;
 import gov.ifms.doi.db.dto.TdoiDbPolAviationDTO;
 
 public interface TdoiDbPolAviationService {
-	public List<TdoiDbPolAviationDTO> saveOrUpdate(TdoiDbPolAviationDTO dto);
+	TdoiDbPolAviationDTO saveOrUpdate(TdoiDbPolAviationDTO dto);
 
-	public List<TdoiDbPolAviationDTO> findAllByCriteria(TdoiDbPolAviationDTO dto);
+	List<TdoiDbPolAviationDTO> findAllByCriteria(TdoiDbPolAviationDTO dto);
 
-	public List<TdoiDbPolAviationDTO> findAllByStatus(TdoiDbPolAviationDTO dto);
+	List<TdoiDbPolAviationDTO> findAllByStatus(TdoiDbPolAviationDTO dto);
 
-	public List<TdoiDbPolAviationDTO> softDeleteById(Long id);
+	List<TdoiDbPolAviationDTO> softDeleteById(Long id);
 
-	public TdoiDbPolAviationDTO addAviationPolicy(TdoiDbPolAviationDTO dto);
+	TdoiDbPolAviationDTO addAviationPolicy(TdoiDbPolAviationDTO dto);
 }

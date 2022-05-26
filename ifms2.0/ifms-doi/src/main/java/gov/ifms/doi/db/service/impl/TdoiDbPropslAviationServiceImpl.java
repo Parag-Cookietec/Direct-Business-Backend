@@ -47,12 +47,12 @@ public class TdoiDbPropslAviationServiceImpl implements TdoiDbPropslAviationServ
 			aviationEntity.getTdoiDbPropAviationAircrafts().forEach(a->a.setTdoiDbPropslAviation(aviationEntity));
 		}
 
+		//Ri Details
 		if(aviationEntity.getTdoiDbPropAviationRiDtls()!=null &&
 				!aviationEntity.getTdoiDbPropAviationRiDtls().isEmpty()){
 			aviationEntity.getTdoiDbPropAviationRiDtls().forEach(r->r.setTdoiDbPropslAviation(aviationEntity));
 		}
 
-		//Ri Details
 		if(StringUtils.isEmpty(dto.getReferenceNo())){
 			aviationEntity.setReferenceNo(proposalNo);
 			aviationEntity.setReferenceDt(new Date());
